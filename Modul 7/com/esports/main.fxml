@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="TOP_CENTER" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.esports.controller.MainController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+    <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ESPORTS ROSTER MANAGER" />
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <TextField fx:id="txtName" promptText="Nama Player" />
+        <TextField fx:id="txtIgn" promptText="In-Game Name (IGN)" />
+        <TextField fx:id="txtRole" promptText="Role (e.g. Support)" />
+        <TextField fx:id="txtTeam" promptText="Nama Tim" />
+        <DatePicker fx:id="dpContract" promptText="Akhir Kontrak" />
+    </HBox>
+
+    <HBox spacing="10.0" alignment="CENTER">
+        <Button text="Tambah Player" onAction="#onAddPlayer" />
+        <Button text="Update Player" onAction="#onUpdatePlayer" />
+        <Button text="Hapus Player" onAction="#onDeletePlayer" style="-fx-text-fill: red;" />
+    </HBox>
+
+    <TableView fx:id="tablePlayers" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colName" text="Nama Asli" prefWidth="150" />
+            <TableColumn fx:id="colIgn" text="IGN" prefWidth="100" />
+            <TableColumn fx:id="colRole" text="Role" prefWidth="100" />
+            <TableColumn fx:id="colTeam" text="Tim" prefWidth="100" />
+            <TableColumn fx:id="colContract" text="Kontrak Habis" prefWidth="120" />
+        </columns>
+    </TableView>
+
+</VBox>
